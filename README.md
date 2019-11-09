@@ -30,7 +30,10 @@
 * Migrate the database using  python3.6 manage.py migrate.
 * To serve the app on local host us this command python manage.py runserver.
 
-* Run the tests using this command:     python manage.py test photos.
+* Run the tests using this command: python manage.py test photos.
+
+## Live site.
+You can view the website on this link:
 
 ## Technologies used.
 * Django
