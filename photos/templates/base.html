@@ -1,0 +1,55 @@
+{% load bootstrap3%}
+ {% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+
+  {% if title %}
+  <title>Photo Gallery - {{ title }}</title>
+  {% else %}
+  <title>Photo Gallery</title>
+  {% endif %} {% block styles %} {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/basephotos.css'%}">
+  {% endblock %}
+</head>
+
+<body>
+  {% include "navbar.html" %} {% block content %}
+  <h1 class="text-center">Welcome to photo gallery</h1>
+   {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+   <script src="{% static 'js/modal.js'%}"></script> 
+  {% bootstrap_javascript %} {% endblock %} 
+  <div class="container-fluid">
+    <div class="row">
+      {% for image in all_images %}
+
+      <div id="image" class="col-md-4 col-sm-12 col-xs-12 col-lg-4">
+        <img src="{{ image.image_path.url }}" class="img-responsive my_image" alt="image.description" />
+
+        <div id="Modal_pic" class="modal">
+          <!-- The Close Button -->
+          <span class="close">&times;</span>
+         URL: {{ image.image_path.url }}
+        IMAGE NAME: {{ image.image_name }}
+        DESCRIPTION: {{ image.image_description }}
+         CATEGORY: {{ image.image_category }}
+        LOCATION:  {{ image.image_location }}
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="img1" />
+
+          <!-- Modal Caption (Image Text) -->
+          <div id="caption"></div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+  {%endblock%}
+</body>
+
+</html>
