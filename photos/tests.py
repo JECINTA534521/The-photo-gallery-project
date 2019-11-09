@@ -2,7 +2,8 @@ from django.test import TestCase
 from django.test import TestCase
 from .models import Image,Location,Category
 # Create your tests here.
-class MyGalery_TestCases(TestCase):
+
+class MyPhotos_TestCases(TestCase):
     def setUp(self):
         self.new_category = Category(category_name='Nature')
         self.new_category.save_category()
