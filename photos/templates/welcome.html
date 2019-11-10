@@ -1,5 +1,106 @@
 {%extends 'base.html'%}
 {% block content %}
 {{ block.super}}
- <!-- <h1>Hey,welcome and view the photos</h1> -->
- {%endblock%}
+<div class="container-fluid" style="background-color: seashell" >
+    <div class="row" >
+        {% for image in all_images %}
+
+                <!-- <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4"> -->
+                        <!-- <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 columns"> -->
+                                <div class="col-md-3 col-sm-3 col-xs-13 single_portfolio_text">
+                                        <!-- <div class="col-md-5"> -->
+                <img src="{{ image.image_path.url }}" class="img-fluid  my_image" alt="{{image.name}}" > 
+        
+                <button id='details'  data-name="{{image.image_name}}" data-description='{{image.image_description}}'
+                    data-location='{{image.image_location}}' data-category='{{image.image_category}}'  type="button"
+                     data-toggle="modal">
+                    View Details
+        
+                </button>
+
+               
+                            <!-- <button class="btn btn-primary" onclick=c>
+                                <i class="fa fa-copy" style="color: #d6962c"></i> Copy Link
+                            </button> -->
+                            <button  onclick="CopyFunction()">Copy url 
+                             
+                             <input type="text" id="myInput" value="{{image.image_path.url}}" class="hidden">
+                            </button>
+
+
+        </div>
+        
+        <!-- <p id="p1">{{ image.image_path.url }}</p> -->
+                <!-- <button id="bt" onclick="copyToClipboard('#p1')">Copy URL</button> -->
+            <!-- The button used to copy the text -->
+<!-- <input type="url" value="{{ image.image_path.url }}" id="myInput" class="hidden">
+<button id="bt" onclick="copyUrl()">Copy url</button> -->
+
+
+
+
+
+
+        <div id="Modal_pic" class="modal">
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img1" />
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+
+        <div class="row">
+
+        <div id="modal-details" class="modal">
+
+            <span class="close">&times;</span>
+
+            <div class="modal-content">
+
+                <!-- <blockquote id="caption-d"> -->
+
+                <ul>
+
+                    <label>DESCRIPTION:</label>
+
+                    <li class="oneone"></li>
+
+                    <label>LOCATION:</label>
+
+                    <li class="twotwo"></li>
+
+                    <label>CATEGORY:</label>
+
+                    <li class="threethree"></li>
+
+                    <label>URL</label>
+
+                    <li class="fourfour"></li>
+
+
+
+
+
+                </ul>
+
+                <!-- </blockquote> -->
+            </div>
+
+        </div>
+</div>
+
+
+
+
+
+        {% endfor %}
+    
+</div>
+</div>
+
+
+{%endblock%}
