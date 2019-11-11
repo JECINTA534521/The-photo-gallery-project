@@ -122,3 +122,6 @@ h1
 #myInput{
  display: none;
 }
+#form{
+  padding-right: 70px;
+}
