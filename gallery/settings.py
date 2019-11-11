@@ -84,12 +84,12 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 # development
 if config('MODE')=="dev":   
-DATABASES = {
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gallery',
         'USER': 'jecinta',
-        'PASSWORD': 'Wanjiru'
+        'PASSWORD': 'Wanjiru',
         'HOST': config('DB_HOST'),
         'PORT': '',
     }
