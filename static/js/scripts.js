@@ -92,8 +92,8 @@ $(document).ready(function(){
 
 
   function CopyFunction() {
-    var copyText = document.getElementById("myInput");
-    copyText.select();
+    var CopyFunction = document.getElementById("myInput");
+    CopyFunction.select();
     document.execCommand("copy");
-    alert("Copied the text: " + copyText.value);
+    alert("Copied the text: " + CopyFunction.value);
   }
