@@ -33,7 +33,7 @@
 * Run the tests using this command: python manage.py test photos.
 
 ## Live site.
-You can view the website on this link:
+You can view the website on this link:https://my-gallarae.herokuapp.com
 
 ## Technologies used.
 * Django
